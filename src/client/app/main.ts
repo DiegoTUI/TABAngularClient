@@ -23,4 +23,4 @@ platformBrowserDynamic().bootstrapModule(AppModule);
 //       console.log('ServiceWorker registration successful with scope: ', registration.scope))
 //     .catch((err: any) =>
 //       console.log('ServiceWorker registration failed: ', err));
-// }
+//

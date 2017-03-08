@@ -529,7 +529,10 @@ export class SeedConfig {
 export function normalizeDependencies(deps: InjectableDependency[]) {
   deps
     .filter((d: InjectableDependency) => !/\*/.test(d.src)) // Skip globs
-    .forEach((d: InjectableDependency) => d.src = require.resolve(d.src));
+    .forEach((d: InjectableDependency) => {
+      console.log('resolving', d.src);
+      return d.src = require.resolve(d.src);
+    });
   return deps;
 }
 
