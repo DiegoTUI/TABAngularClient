@@ -10,6 +10,9 @@ import { LoginModule } from './login/login.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { SharedModule } from './shared/shared.module';
 
+import { AuthenticationService } from './_services/index';
+import { AuthGuard } from './_guards/index';
+
 
 @NgModule({
 	imports: [
@@ -21,10 +24,14 @@ import { SharedModule } from './shared/shared.module';
 		SharedModule.forRoot()
 	],
 	declarations: [AppComponent],
-	providers: [{
-		provide: APP_BASE_HREF,
-		useValue: '<%= APP_BASE %>'
-	}],
+	providers: [
+		{
+			provide: APP_BASE_HREF,
+			useValue: '<%= APP_BASE %>'
+		},
+		AuthenticationService,
+		AuthGuard
+	],
 	bootstrap: [AppComponent]
 
 })

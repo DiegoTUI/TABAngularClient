@@ -6,6 +6,8 @@ import { BSComponentRoutes } from './bs-component/index';
 
 import { DashboardComponent } from './index';
 
+import { AuthGuard } from '../_guards/index';
+
 export const DashboardRoutes: Route[] = [
   	{
     	path: 'dashboard',
@@ -14,6 +16,7 @@ export const DashboardRoutes: Route[] = [
 	    	...HomeRoutes,
 	    	...BSComponentRoutes,
 	    	...BlankPageRoutes
-    	]
+    	],
+    	canActivate: [AuthGuard]
   	}
 ];

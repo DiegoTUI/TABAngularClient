@@ -5,6 +5,8 @@ import { DashboardRoutes } from './dashboard/index';
 
 import { LoginComponent } from './login/index';
 
+import { AuthGuard } from './_guards/index';
+
 export const routes: Routes = [
 	...LoginRoutes,
 	...DashboardRoutes,

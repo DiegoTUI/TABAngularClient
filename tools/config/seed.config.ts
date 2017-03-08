@@ -144,7 +144,7 @@ export class SeedConfig {
    * `index.html`.
    * @type {string}
    */
-  APP_TITLE = 'Ani angular2 free edition!';
+  APP_TITLE = 'TAB Angular Client';
 
   /**
    * The base folder of the applications source files.
