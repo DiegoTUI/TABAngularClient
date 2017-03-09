@@ -5,8 +5,8 @@ import * as runSequence from 'run-sequence';
 import Config from './tools/config';
 import { loadTasks } from './tools/utils';
 
-gulp.src('node_modules/moment/moment.js')
-  .pipe(gulp.dest('./node_modules'));
+//gulp.src('node_modules/moment/moment.js')
+//  .pipe(gulp.dest('./node_modules'));
 
 loadTasks(Config.SEED_TASKS_DIR);
 loadTasks(Config.PROJECT_TASKS_DIR);

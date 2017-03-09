@@ -143,6 +143,7 @@
     "font-awesome": "4.6.3",
     "jquery": "3.0.0",
     "highcharts": "5.0.7",
+    "handlebars": "^4.0.6",
     "moment": "2.15.0",
     "ng2-bootstrap": "1.1.5",
     "reflect-metadata": "0.1.8",
