@@ -36,8 +36,8 @@ export class LoginComponent {
             .subscribe(
                 user => {
                 	if (!user) {
-                		return this.alertService.error('Invalid email/password');
-                		this.loading = false;
+                		this.alertService.error('Invalid email/password');
+                		return this.loading = false;
                 	}
 
                     this.router.navigate([this.returnUrl]);
