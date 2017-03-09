@@ -10,7 +10,7 @@ import { LoginModule } from './login/login.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { SharedModule } from './shared/shared.module';
 
-import { AuthenticationService } from './_services/index';
+import { AuthenticationService, AlertService } from './_services/index';
 import { AuthGuard } from './_guards/index';
 
 
@@ -23,13 +23,16 @@ import { AuthGuard } from './_guards/index';
 		DashboardModule,
 		SharedModule.forRoot()
 	],
-	declarations: [AppComponent],
+	declarations: [
+		AppComponent
+	],
 	providers: [
 		{
 			provide: APP_BASE_HREF,
 			useValue: '<%= APP_BASE %>'
 		},
 		AuthenticationService,
+		AlertService,
 		AuthGuard
 	],
 	bootstrap: [AppComponent]

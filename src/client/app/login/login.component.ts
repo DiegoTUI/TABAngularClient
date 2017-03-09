@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { AuthenticationService } from '../_services/index';
+import { AuthenticationService, AlertService } from '../_services/index';
 
 /**
 *	This class represents the lazy loaded LoginComponent.
@@ -18,7 +18,8 @@ export class LoginComponent {
 	constructor(
 		private router: Router,
 		private route: ActivatedRoute,
-		private authenticationService: AuthenticationService) {}
+		private authenticationService: AuthenticationService,
+		private alertService: AlertService) {}
 
 	ngOnInit() {
         // reset login status
@@ -30,14 +31,20 @@ export class LoginComponent {
 
 	login(email, password) {
 		console.log('login')
+		this.loading = true;
 		this.authenticationService.login(email, password)
             .subscribe(
-                data => {
-                	console.log(this.returnUrl)
+                user => {
+                	if (!user) {
+                		return this.alertService.error('Invalid email/password');
+                		this.loading = false;
+                	}
+
                     this.router.navigate([this.returnUrl]);
                 },
                 error => {
-                    console.error('An error occurred', error);
+                	this.alertService.error('Invalid email/password');
+                	this.loading = false;
                 });
 	}
 }
